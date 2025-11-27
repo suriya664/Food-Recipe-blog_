@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Recipe - Food Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span>🍳</span>
+                <span>Food Blog</span>
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="dropdown">
+                    <a href="index.html">Home ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn btn-primary">Login</a></li>
+                <li><a href="register.html" class="btn btn-outline">Register</a></li>
+                <li><button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Dark Mode">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section">
+        <div class="container">
+            <h1 class="text-center">Submit Your Recipe</h1>
+            <h2>Share your favorite recipe with our community</h2>
+        </div>
+    </section>
+
+    <!-- Submit Recipe Form -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="card">
+                    <div class="card-body">
+                        <form id="recipeForm">
+                            <div class="form-group">
+                                <label for="recipe-title">Recipe Title *</label>
+                                <input type="text" id="recipe-title" name="recipe-title" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recipe-category">Category *</label>
+                                <select id="recipe-category" name="recipe-category" class="form-control" required>
+                                    <option value="">Select a category</option>
+                                    <option value="breakfast">Breakfast</option>
+                                    <option value="lunch">Lunch</option>
+                                    <option value="dinner">Dinner</option>
+                                    <option value="desserts">Desserts</option>
+                                    <option value="drinks">Drinks</option>
+                                    <option value="snacks">Snacks</option>
+                                    <option value="healthy">Healthy Meals</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recipe-image">Recipe Image URL</label>
+                                <input type="url" id="recipe-image" name="recipe-image" class="form-control" placeholder="https://example.com/image.jpg">
+                            </div>
+
+                            <div class="grid grid-2">
+                                <div class="form-group">
+                                    <label for="prep-time">Prep Time (minutes) *</label>
+                                    <input type="number" id="prep-time" name="prep-time" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cook-time">Cook Time (minutes) *</label>
+                                    <input type="number" id="cook-time" name="cook-time" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-2">
+                                <div class="form-group">
+                                    <label for="servings">Servings *</label>
+                                    <input type="number" id="servings" name="servings" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="difficulty">Difficulty *</label>
+                                    <select id="difficulty" name="difficulty" class="form-control" required>
+                                        <option value="">Select difficulty</option>
+                                        <option value="easy">Easy</option>
+                                        <option value="medium">Medium</option>
+                                        <option value="hard">Hard</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="description">Recipe Description *</label>
+                                <textarea id="description" name="description" class="form-control" rows="4" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ingredients">Ingredients *</label>
+                                <textarea id="ingredients" name="ingredients" class="form-control" rows="8" placeholder="Enter each ingredient on a new line" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="instructions">Instructions *</label>
+                                <textarea id="instructions" name="instructions" class="form-control" rows="10" placeholder="Enter each step on a new line" required></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="submitter-name">Your Name *</label>
+                                <input type="text" id="submitter-name" name="submitter-name" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="submitter-email">Your Email *</label>
+                                <input type="email" id="submitter-email" name="submitter-email" class="form-control" required>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit Recipe</button>
+                        </form>
+                        <div id="submitMessage" style="margin-top: var(--spacing-md); display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="logo" style="color: var(--white); margin-bottom: var(--spacing-md); display: inline-flex;">
+                        <span>🍳</span>
+                        <span>Food Blog</span>
+                    </a>
+                    <h3>About Us</h3>
+                    <p>Your go-to destination for delicious recipes, cooking tips, and culinary inspiration from around the world.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="social-icon" style="background-color: #1877F2;">f</a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">📷</a>
+                        <a href="https://twitter.com" target="_blank" class="social-icon" style="background-color: #1DA1F2;">🐦</a>
+                        <a href="https://youtube.com" target="_blank" class="social-icon" style="background-color: #FF0000;">▶</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:info@foodrecipeblog.com">info@foodrecipeblog.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    <p>Address: 123 Recipe Street, Food City, FC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Food Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Back to Top">↑</button>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        });
+
+                function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            if (navMenu) {
+                const isActive = navMenu.classList.contains('active');
+                
+                if (isActive) {
+                    // Closing menu
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('nav-menu-open');
+                    
+                    // Restore scroll position and remove fixed positioning
+                    if (window.innerWidth <= 1024) {
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                        document.body.style.height = '';
+                        document.body.style.overflow = '';
+                    }
+                } else {
+                    // Opening menu
+                    if (window.innerWidth <= 1024) {
+                        navMenu.classList.add('active');
+                        document.body.classList.add('nav-menu-open');
+                    }
+                }
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navMenu && menuToggle && window.innerWidth <= 1024) {
+                const isClickInsideMenu = navMenu.contains(event.target);
+                const isClickOnToggle = menuToggle.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('nav-menu-open');
+                }
+            }
+        });
+
+        // Handle dropdown toggle on mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                const dropdownLink = dropdown.querySelector('a');
+                if (dropdownLink) {
+                    dropdownLink.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 1024) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+            
+            // Close menu when clicking menu link
+            const menuLinks = document.querySelectorAll('.nav-menu li a:not(.dropdown > a)');
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        const navMenu = document.getElementById('navMenu');
+                        const href = link.getAttribute('href');
+                        
+                        // Only process if menu is open and link has valid href
+                        if (navMenu && navMenu.classList.contains('active') && href && href !== '#' && !href.startsWith('javascript:')) {
+                            // Close menu immediately - don't wait for navigation
+                            navMenu.classList.remove('active');
+                            document.body.classList.remove('nav-menu-open');
+                            
+                            // Restore scroll position and remove fixed positioning immediately
+                            document.body.style.position = '';
+                            document.body.style.width = '';
+                            document.body.style.height = '';
+                            document.body.style.overflow = '';
+                            
+                            // If href exists, navigate to it (fallback if default navigation doesn't work)
+                            if (href && href !== window.location.pathname.split('/').pop()) {
+                                // Use setTimeout to allow menu to close first, then navigate
+                                setTimeout(function() {
+                                    window.location.href = href;
+                                }, 100);
+                            }
+                            
+                            // Don't prevent default - let browser handle it first
+                            // setTimeout is just a fallback
+                        }
+                    }
+                }, false);
+            });
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        document.getElementById('recipeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const submitMessage = document.getElementById('submitMessage');
+            submitMessage.style.display = 'block';
+            submitMessage.style.padding = 'var(--spacing-sm)';
+            submitMessage.style.borderRadius = 'var(--radius-md)';
+            submitMessage.style.backgroundColor = 'var(--success-color)';
+            submitMessage.style.color = 'var(--white)';
+            submitMessage.textContent = 'Thank you! Your recipe has been submitted and is under review.';
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Food Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span>🍳</span>
+                <span>Food Blog</span>
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="dropdown">
+                    <a href="index.html">Home ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="blog.html" class="active">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn btn-primary">Login</a></li>
+                <li><a href="register.html" class="btn btn-outline">Register</a></li>
+                <li><button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Dark Mode">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section">
+        <div class="container">
+            <h1 class="text-center">Our Blog</h1>
+            <h2>Cooking tips, stories, and culinary inspiration</h2>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-2">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&auto=format&fit=crop" alt="Kitchen Tools" class="card-img" style="height: 250px;">
+                    <div class="card-body">
+                        <h3 class="card-title">10 Essential Kitchen Tools Every Home Cook Needs</h3>
+                        <p class="blog-date">Published on March 15, 2024</p>
+                        <p class="card-text">Discover the must-have kitchen tools that will make your cooking experience easier and more enjoyable. From basic utensils to specialized equipment, we've got you covered.</p>
+                        <a href="blog-post.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1505935428862-770b6f24f629?w=800&auto=format&fit=crop" alt="Meal Planning" class="card-img" style="height: 250px;">
+                    <div class="card-body">
+                        <h3 class="card-title">The Art of Meal Planning: Save Time and Money</h3>
+                        <p class="blog-date">Published on March 10, 2024</p>
+                        <p class="card-text">Learn how to plan your meals effectively to save time, reduce food waste, and stick to your budget. Tips and tricks from professional meal planners.</p>
+                        <a href="blog-post.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800&auto=format&fit=crop" alt="Fresh Vegetables" class="card-img" style="height: 250px;">
+                    <div class="card-body">
+                        <h3 class="card-title">Healthy Eating on a Budget: Smart Shopping Tips</h3>
+                        <p class="blog-date">Published on March 5, 2024</p>
+                        <p class="card-text">Eating healthy doesn't have to break the bank. Discover practical strategies for buying nutritious foods while staying within your budget.</p>
+                        <a href="blog-post.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&auto=format&fit=crop" alt="Spices and Vegetables" class="card-img" style="height: 250px;">
+                    <div class="card-body">
+                        <h3 class="card-title">Spice Up Your Cooking: A Guide to World Spices</h3>
+                        <p class="blog-date">Published on February 28, 2024</p>
+                        <p class="card-text">Explore the world of spices and learn how to use them to transform your dishes. From common spices to exotic flavors, expand your culinary horizons.</p>
+                        <a href="blog-post.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&auto=format&fit=crop" alt="Simple Kitchen" class="card-img" style="height: 250px;">
+                    <div class="card-body">
+                        <h3 class="card-title">Cooking for Beginners: Your First Week in the Kitchen</h3>
+                        <p class="blog-date">Published on February 20, 2024</p>
+                        <p class="card-text">New to cooking? Start your culinary journey with our beginner-friendly guide. Learn the basics and build confidence in the kitchen.</p>
+                        <a href="blog-post.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&auto=format&fit=crop" alt="Fresh Produce" class="card-img" style="height: 250px;">
+                    <div class="card-body">
+                        <h3 class="card-title">Seasonal Cooking: Making the Most of Fresh Produce</h3>
+                        <p class="blog-date">Published on February 15, 2024</p>
+                        <p class="card-text">Discover the benefits of seasonal cooking and learn which fruits and vegetables are at their peak during each season. Fresh, flavorful, and affordable!</p>
+                        <a href="blog-post.html" class="btn btn-primary">Read More</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="logo" style="color: var(--white); margin-bottom: var(--spacing-md); display: inline-flex;">
+                        <span>🍳</span>
+                        <span>Food Blog</span>
+                    </a>
+                    <h3>About Us</h3>
+                    <p>Your go-to destination for delicious recipes, cooking tips, and culinary inspiration from around the world.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="social-icon" style="background-color: #1877F2;">f</a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">📷</a>
+                        <a href="https://twitter.com" target="_blank" class="social-icon" style="background-color: #1DA1F2;">🐦</a>
+                        <a href="https://youtube.com" target="_blank" class="social-icon" style="background-color: #FF0000;">▶</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:info@foodrecipeblog.com">info@foodrecipeblog.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    <p>Address: 123 Recipe Street, Food City, FC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Food Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Back to Top">↑</button>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        });
+
+                function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            if (navMenu) {
+                const isActive = navMenu.classList.contains('active');
+                
+                if (isActive) {
+                    // Closing menu
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('nav-menu-open');
+                    
+                    // Restore scroll position and remove fixed positioning
+                    if (window.innerWidth <= 1024) {
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                        document.body.style.height = '';
+                        document.body.style.overflow = '';
+                    }
+                } else {
+                    // Opening menu
+                    if (window.innerWidth <= 1024) {
+                        navMenu.classList.add('active');
+                        document.body.classList.add('nav-menu-open');
+                    }
+                }
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navMenu && menuToggle && window.innerWidth <= 1024) {
+                const isClickInsideMenu = navMenu.contains(event.target);
+                const isClickOnToggle = menuToggle.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('nav-menu-open');
+                }
+            }
+        });
+
+        // Handle dropdown toggle on mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                const dropdownLink = dropdown.querySelector('a');
+                if (dropdownLink) {
+                    dropdownLink.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 1024) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+            
+            // Close menu when clicking menu link
+            const menuLinks = document.querySelectorAll('.nav-menu li a:not(.dropdown > a)');
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        const navMenu = document.getElementById('navMenu');
+                        const href = link.getAttribute('href');
+                        
+                        // Only process if menu is open and link has valid href
+                        if (navMenu && navMenu.classList.contains('active') && href && href !== '#' && !href.startsWith('javascript:')) {
+                            // Close menu immediately - don't wait for navigation
+                            navMenu.classList.remove('active');
+                            document.body.classList.remove('nav-menu-open');
+                            
+                            // Restore scroll position and remove fixed positioning immediately
+                            document.body.style.position = '';
+                            document.body.style.width = '';
+                            document.body.style.height = '';
+                            document.body.style.overflow = '';
+                            
+                            // If href exists, navigate to it (fallback if default navigation doesn't work)
+                            if (href && href !== window.location.pathname.split('/').pop()) {
+                                // Use setTimeout to allow menu to close first, then navigate
+                                setTimeout(function() {
+                                    window.location.href = href;
+                                }, 100);
+                            }
+                            
+                            // Don't prevent default - let browser handle it first
+                            // setTimeout is just a fallback
+                        }
+                    }
+                }, false);
+            });
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
+

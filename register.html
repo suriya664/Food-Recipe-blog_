@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Food Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+</head>
+<body>
+    <!-- Register Section -->
+    <section class="section" style="min-height: 100vh; display: flex; align-items: center;">
+    <div class="container">
+        <div style="max-width: 500px; margin: 0 auto;">
+            <div class="card">
+                <div class="card-body" style="text-align: center; display: flex; flex-direction: column; align-items: center;">
+                    <div style="text-align: center; margin-bottom: var(--spacing-lg); display: flex; justify-content: center; align-items: center;">
+                        <a href="index.html" class="logo" style="justify-content: center; text-decoration: none; display: inline-flex;">
+                            <span>🍳</span>
+                            <span>Food Blog</span>
+                        </a>
+                    </div>
+                    <h1 class="text-center" style="text-align: center; width: 100%;">Create Account</h1>
+                    <h2 style="text-align: center; margin-bottom: var(--spacing-lg); width: 100%;">Join our community</h2>
+                        <form id="registerForm" style="width: 100%; max-width: 100%;">
+                            <div class="form-group" style="text-align: center;">
+                                <label for="fullname" style="text-align: left; display: block; width: 100%;">Full Name *</label>
+                                <input type="text" id="fullname" name="fullname" class="form-control" required style="text-align: center;">
+                            </div>
+                            <div class="form-group" style="text-align: center;">
+                                <label for="email" style="text-align: left; display: block; width: 100%;">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-control" required style="text-align: center;">
+                            </div>
+                            <div class="form-group" style="text-align: center;">
+                                <label for="password" style="text-align: left; display: block; width: 100%;">Password *</label>
+                                <input type="password" id="password" name="password" class="form-control" required style="text-align: center;">
+                            </div>
+                            <div class="form-group" style="text-align: center;">
+                                <label for="confirm-password" style="text-align: left; display: block; width: 100%;">Confirm Password *</label>
+                                <input type="password" id="confirm-password" name="confirm-password" class="form-control" required style="text-align: center;">
+                            </div>
+                            <div class="form-group" style="text-align: center;">
+                                <label style="display: flex; justify-content: center; align-items: center; gap: var(--spacing-xs); text-align: center; width: 100%;">
+                                    <input type="checkbox" name="terms" required>
+                                    <span>I agree to the <a href="terms.html" style="color: var(--primary-color);">Terms of Service</a> and <a href="privacy-policy.html" style="color: var(--primary-color);">Privacy Policy</a></span>
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Create Account</button>
+                        </form>
+                        <div id="registerMessage" style="margin-top: var(--spacing-md); display: none; text-align: center; width: 100%;"></div>
+                        <p style="text-align: center; margin-top: var(--spacing-md); width: 100%;">
+                            Already have an account? <a href="login.html" style="color: var(--primary-color);">Login here</a>
+                        </p>
+                        <div style="text-align: center; margin-top: var(--spacing-lg); padding-top: var(--spacing-md); border-top: 1px solid var(--border-color); display: flex; justify-content: center; align-items: center; width: 100%;">
+                            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Dark Mode" style="margin: 0;">🌙</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        });
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirm-password').value;
+            const registerMessage = document.getElementById('registerMessage');
+            
+            if (password !== confirmPassword) {
+                registerMessage.style.display = 'block';
+                registerMessage.style.padding = 'var(--spacing-sm)';
+                registerMessage.style.borderRadius = 'var(--radius-md)';
+                registerMessage.style.backgroundColor = 'var(--error-color)';
+                registerMessage.style.color = 'var(--white)';
+                registerMessage.style.textAlign = 'center';
+                registerMessage.style.width = '100%';
+                registerMessage.textContent = 'Passwords do not match!';
+                return;
+            }
+            
+            registerMessage.style.display = 'block';
+            registerMessage.style.padding = 'var(--spacing-sm)';
+            registerMessage.style.borderRadius = 'var(--radius-md)';
+            registerMessage.style.backgroundColor = 'var(--success-color)';
+            registerMessage.style.color = 'var(--white)';
+            registerMessage.style.textAlign = 'center';
+            registerMessage.style.width = '100%';
+            registerMessage.textContent = 'Account created successfully! Redirecting...';
+            setTimeout(() => {
+                window.location.href = 'profile.html';
+            }, 1500);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+

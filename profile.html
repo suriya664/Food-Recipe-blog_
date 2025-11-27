@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Food Blog</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span>🍳</span>
+                <span>Food Blog</span>
+            </a>
+            <button class="mobile-menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="dropdown">
+                    <a href="index.html">Home ▼</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index2.html">Home 2</a></li>
+                    </ul>
+                </li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="profile.html" class="active">Profile</a></li>
+                <li><a href="login.html" class="btn btn-primary">Login</a></li>
+                <li><a href="register.html" class="btn btn-outline">Register</a></li>
+                <li><button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle Dark Mode">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="section">
+        <div class="container">
+            <h1 class="text-center">My Profile</h1>
+            
+            <div class="grid grid-2" style="margin-top: var(--spacing-xl);">
+                <div class="card">
+                    <div class="card-body">
+                        <div style="text-align: center; margin-bottom: var(--spacing-md);">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200" alt="Profile" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: var(--spacing-md);">
+                            <h3>John Doe</h3>
+                            <p>john.doe@example.com</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <a href="favorites.html" class="btn btn-primary">My Favorites</a>
+                            <a href="submit-recipe.html" class="btn btn-outline" style="margin-left: var(--spacing-sm);">Submit Recipe</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <h3>Edit Profile</h3>
+                        <form id="profileForm">
+                            <div class="form-group">
+                                <label for="profile-name">Full Name</label>
+                                <input type="text" id="profile-name" name="profile-name" class="form-control" value="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-email">Email</label>
+                                <input type="email" id="profile-email" name="profile-email" class="form-control" value="john.doe@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-phone">Phone</label>
+                                <input type="tel" id="profile-phone" name="profile-phone" class="form-control" value="+1 (234) 567-890">
+                            </div>
+                            <div class="form-group">
+                                <label for="profile-bio">Bio</label>
+                                <textarea id="profile-bio" name="profile-bio" class="form-control" rows="4">I love cooking and trying new recipes!</textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                        <div id="profileMessage" style="margin-top: var(--spacing-md); display: none;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: var(--spacing-xl);">
+                <h2>My Submitted Recipes</h2>
+                <div class="grid grid-3" style="margin-top: var(--spacing-lg);">
+                    <div class="recipe-card">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800" alt="My Recipe" class="recipe-card-img">
+                        <div class="recipe-card-body">
+                            <h3 class="recipe-card-title">My Special Pancakes</h3>
+                            <div class="recipe-meta">
+                                <span>⏱️ 20 min</span>
+                                <span>👥 4 servings</span>
+                            </div>
+                            <p class="card-text">A family favorite recipe passed down through generations.</p>
+                            <a href="recipe-details.html" class="btn btn-primary">View Recipe</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="logo" style="color: var(--white); margin-bottom: var(--spacing-md); display: inline-flex;">
+                        <span>🍳</span>
+                        <span>Food Blog</span>
+                    </a>
+                    <h3>About Us</h3>
+                    <p>Your go-to destination for delicious recipes, cooking tips, and culinary inspiration from around the world.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank" class="social-icon" style="background-color: #1877F2;">f</a>
+                        <a href="https://instagram.com" target="_blank" class="social-icon" style="background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);">📷</a>
+                        <a href="https://twitter.com" target="_blank" class="social-icon" style="background-color: #1DA1F2;">🐦</a>
+                        <a href="https://youtube.com" target="_blank" class="social-icon" style="background-color: #FF0000;">▶</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="recipes.html">Recipes</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Email: <a href="mailto:info@foodrecipeblog.com">info@foodrecipeblog.com</a></p>
+                    <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    <p>Address: 123 Recipe Street, Food City, FC 12345</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Food Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()" title="Back to Top">↑</button>
+
+    <script>
+        // Theme Toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
+
+        function updateThemeIcon(theme) {
+            const themeToggle = document.getElementById('themeToggle');
+            if (themeToggle) {
+                themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
+            }
+        }
+
+        // Load saved theme
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            updateThemeIcon(savedTheme);
+        });
+
+                function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            if (navMenu) {
+                const isActive = navMenu.classList.contains('active');
+                
+                if (isActive) {
+                    // Closing menu
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('nav-menu-open');
+                    
+                    // Restore scroll position and remove fixed positioning
+                    if (window.innerWidth <= 1024) {
+                        document.body.style.position = '';
+                        document.body.style.width = '';
+                        document.body.style.height = '';
+                        document.body.style.overflow = '';
+                    }
+                } else {
+                    // Opening menu
+                    if (window.innerWidth <= 1024) {
+                        navMenu.classList.add('active');
+                        document.body.classList.add('nav-menu-open');
+                    }
+                }
+            }
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const navMenu = document.getElementById('navMenu');
+            const menuToggle = document.querySelector('.mobile-menu-toggle');
+            
+            if (navMenu && menuToggle && window.innerWidth <= 1024) {
+                const isClickInsideMenu = navMenu.contains(event.target);
+                const isClickOnToggle = menuToggle.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnToggle && navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('nav-menu-open');
+                }
+            }
+        });
+
+        // Handle dropdown toggle on mobile
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(function(dropdown) {
+                const dropdownLink = dropdown.querySelector('a');
+                if (dropdownLink) {
+                    dropdownLink.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 1024) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            dropdown.classList.toggle('active');
+                        }
+                    });
+                }
+            });
+            
+            // Close menu when clicking menu link
+            const menuLinks = document.querySelectorAll('.nav-menu li a:not(.dropdown > a)');
+            menuLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        const navMenu = document.getElementById('navMenu');
+                        const href = link.getAttribute('href');
+                        
+                        // Only process if menu is open and link has valid href
+                        if (navMenu && navMenu.classList.contains('active') && href && href !== '#' && !href.startsWith('javascript:')) {
+                            // Close menu immediately - don't wait for navigation
+                            navMenu.classList.remove('active');
+                            document.body.classList.remove('nav-menu-open');
+                            
+                            // Restore scroll position and remove fixed positioning immediately
+                            document.body.style.position = '';
+                            document.body.style.width = '';
+                            document.body.style.height = '';
+                            document.body.style.overflow = '';
+                            
+                            // If href exists, navigate to it (fallback if default navigation doesn't work)
+                            if (href && href !== window.location.pathname.split('/').pop()) {
+                                // Use setTimeout to allow menu to close first, then navigate
+                                setTimeout(function() {
+                                    window.location.href = href;
+                                }, 100);
+                            }
+                            
+                            // Don't prevent default - let browser handle it first
+                            // setTimeout is just a fallback
+                        }
+                    }
+                }, false);
+            });
+        });
+
+        // Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const profileMessage = document.getElementById('profileMessage');
+            profileMessage.style.display = 'block';
+            profileMessage.style.padding = 'var(--spacing-sm)';
+            profileMessage.style.borderRadius = 'var(--radius-md)';
+            profileMessage.style.backgroundColor = 'var(--success-color)';
+            profileMessage.style.color = 'var(--white)';
+            profileMessage.textContent = 'Profile updated successfully!';
+        });
+    </script>
+</body>
+</html>
+
